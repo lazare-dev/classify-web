@@ -1,5 +1,7 @@
 services:
   - type: web
+      # ... other settings ...
+    startCommand: gunicorn wsgi:app
     name: doctagger
     env: docker
     region: oregon
