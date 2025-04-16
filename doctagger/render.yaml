@@ -8,8 +8,8 @@ services:
     repo: https://github.com/yourusername/doctagger
     dockerfilePath: ./Dockerfile
     autoDeploy: true
-    buildCommand: chmod +x render.sh
-    startCommand: ./render.sh
+    # Override the default start command
+    startCommand: gunicorn wsgi:app
     envVars:
       - key: API_BASE_URL
         value: https://classiapi.data443.com
@@ -19,8 +19,6 @@ services:
         value: 5
       - key: FLASK_ENV
         value: production
-      - key: PORT
-        value: 8080
     disk:
       name: app-data
       mountPath: /app
