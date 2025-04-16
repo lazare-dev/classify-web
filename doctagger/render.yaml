@@ -1,7 +1,5 @@
 services:
   - type: web
-      # ... other settings ...
-    startCommand: gunicorn wsgi:app
     name: doctagger
     env: docker
     region: oregon
@@ -21,5 +19,5 @@ services:
         value: production
     disk:
       name: app-data
-      mountPath: /app
+      mountPath: /app/data
       sizeGB: 1
