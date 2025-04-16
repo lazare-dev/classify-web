@@ -2,10 +2,10 @@ services:
   - type: web
     name: doctagger
     env: docker
-    region: oregon # You can change this to your preferred region
-    plan: starter # Change to standard or other plan as needed
+    region: oregon
+    plan: starter
     branch: main
-    repo: https://github.com/yourusername/doctagger # Replace with your actual repo URL
+    repo: https://github.com/yourusername/doctagger
     dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:
