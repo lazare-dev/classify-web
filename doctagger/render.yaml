@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: doctagger
+    env: docker
+    region: oregon # You can change this to your preferred region
+    plan: starter # Change to standard or other plan as needed
+    branch: main
+    repo: https://github.com/yourusername/doctagger # Replace with your actual repo URL
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: API_BASE_URL
+        value: https://classiapi.data443.com
+      - key: TAG_NAME
+        value: Data Class
+      - key: MAX_WORKERS
+        value: 5
+      - key: FLASK_ENV
+        value: production
+    disk:
+      name: app-data
+      mountPath: /app
+      sizeGB: 1

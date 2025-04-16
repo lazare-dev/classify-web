@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  doctagger:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./processed:/app/processed
+      - ./logs:/app/logs
+    environment:
+      - API_BASE_URL=https://classiapi.data443.com
+      - TAG_NAME=Data Class
+      - MAX_WORKERS=5
+      - FLASK_ENV=development
