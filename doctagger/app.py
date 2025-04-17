@@ -1,3 +1,9 @@
-# app.py - temporary file for testing
-from wsgi import app
-# This file just imports the app from wsgi.py
+# Standalone app.py that doesn't depend on wsgi.py
+from flask import Flask
+from app import create_app
+
+# Create the Flask application
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080)
