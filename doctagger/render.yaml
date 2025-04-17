@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: starter
     branch: main
-    dockerCommand: gunicorn wsgi:app
+    dockerCommand: ./start.sh
     dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:
