@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: starter
     branch: main
-    dockerCommand: ./start.sh
+    dockerCommand: gunicorn --bind 0.0.0.0:8080 app:app
     dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:

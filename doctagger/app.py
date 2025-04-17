@@ -1,9 +1,11 @@
-# Standalone app.py that doesn't depend on wsgi.py
-from flask import Flask
-from app import create_app
+python# Simple standalone Flask app
+from flask import Flask, render_template
 
-# Create the Flask application
-app = create_app()
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "DocTagger is running!"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
